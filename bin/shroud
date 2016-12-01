@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+// external
+import {red, green} from 'chalk'
+import minimist from 'minimist'
+
+const argv = minimst(process.argv.slice(2))
+
+const commands = new Set([ 'help', 'list', 'ls', 'rm', 'remove',
+  'update' ])
+
+const aliases = new Map([
+  ['ls', 'list'],
+  ['rm', 'remove'],
+])
+
+let cmd = args._[0]

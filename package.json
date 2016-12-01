@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "gulp compile",
+    "build": "mkdir build && gulp compile",
     "start": "gulp",
     "test": "standard"
   },
