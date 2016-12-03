@@ -25,5 +25,8 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "standard": "^8.6.0"
+  },
+  "dependencies": {
+    "minimist": "^1.2.0"
   }
 }

@@ -1,16 +1,38 @@
 #!/usr/bin/env node
+// native
+
 // external
-import {red, green} from 'chalk'
+import {red} from 'chalk'
 import minimist from 'minimist'
 
-const argv = minimst(process.argv.slice(2))
+// lib
+import commands from '../lib/commands/index'
+import help from '../lib/help'
+import usage from '../lib/usage'
 
-const commands = new Set([ 'help', 'list', 'ls', 'rm', 'remove',
-  'update' ])
+const argv = minimist(process.argv.slice(2))
 
+if (argv.help || argv.h) {
+  usage()
+}
+
+// Map constructor turns arrays into key value pairs
 const aliases = new Map([
   ['ls', 'list'],
-  ['rm', 'remove'],
+  ['rm', 'remove']
 ])
 
-let cmd = args._[0]
+// default command is help
+let command = argv._[0] || 'help'
+
+// if the command is an alias, redefine it
+if (aliases.has(command)) {
+  command = aliases.get(command)
+}
+
+if (!commands.has(command)) {
+  console.log(red(`Error: ${command} is not a valid command\n`))
+  usage()
+  process.exit(1)
+}
+

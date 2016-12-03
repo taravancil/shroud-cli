@@ -4,7 +4,7 @@ import babel from 'gulp-babel'
 gulp.task('compile', ['compile-lib', 'compile-bin'])
 
 gulp.task('compile-lib', () => {
-  gulp.src('lib/*.js')
+  gulp.src('lib/**/*.js')
     .pipe(babel())
     .pipe(gulp.dest('build/lib'))
 })
@@ -17,7 +17,7 @@ gulp.task('compile-bin', () => {
 
 gulp.task('watch', () => {
   gulp.watch('bin/*', ['compile-bin'])
-  gulp.watch('lib/*.js', ['compile-lib'])
+  gulp.watch('lib/**/.js', ['compile-lib'])
 })
 
 gulp.task('default', ['compile', 'watch'])
