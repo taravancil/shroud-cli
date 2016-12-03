@@ -36,3 +36,7 @@ if (!commands.has(command)) {
   process.exit(1)
 }
 
+// get the command object and run it
+command = commands.get(command)
+command.run()
+
