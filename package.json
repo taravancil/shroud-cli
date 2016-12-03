@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "mkdir build && gulp compile",
+    "build": "mkdir -p build && gulp compile",
     "start": "gulp",
     "test": "standard"
   },
   "author": "Tara Vancil",
   "license": "MIT",
   "babel": {
-    "presets": ["es2015"],
+    "presets": [
+      "es2015"
+    ],
     "plugins": [
       "transform-runtime",
       "transform-async-to-generator"
