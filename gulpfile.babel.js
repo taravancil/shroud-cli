@@ -15,9 +15,12 @@ gulp.task('compile-bin', () => {
     .pipe(gulp.dest('build/bin'))
 })
 
-gulp.task('watch', () => {
+gulp.task('watch-bin', () => {
   gulp.watch('bin/*', ['compile-bin'])
-  gulp.watch('lib/**/.js', ['compile-lib'])
 })
 
-gulp.task('default', ['compile', 'watch'])
+gulp.task('watch-lib', () => {
+  gulp.watch('lib/**/*.js', ['compile-lib'])
+})
+
+gulp.task('default', ['compile', 'watch-lib', 'watch-bin'])
