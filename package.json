@@ -29,7 +29,8 @@
     "standard": "^8.6.0"
   },
   "dependencies": {
+    "inquirer": "^1.2.3",
     "minimist": "^1.2.0",
-    "shroud": "^0.2.0"
+    "shroud": "^0.3.0"
   }
 }
