@@ -3,6 +3,9 @@
 [![standard code
 style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
 
+** `shroud-cli` is under active development and is not yet recommended for use.
+Use at your own risk.**
+
 `shroud-cli` is command line interface for managing passwords (and other secrets). It encrypts/decrypts secrets and manages keys with [shroud](https://github.com/taravancil/shroud) and is inspired by [passgo](https://github.com/ejcx/passgo).
 
 ## Getting Started
