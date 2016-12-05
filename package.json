@@ -7,7 +7,7 @@
   },
   "scripts": {
     "build": "mkdir -p build && gulp compile",
-    "prepublish": "standard && npm run build",
+    "prepublish": "standard && mkdir -p build && gulp compile",
     "start": "gulp",
     "test": "standard"
   },
