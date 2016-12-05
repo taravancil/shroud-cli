@@ -14,6 +14,7 @@ const argv = minimist(process.argv.slice(2))
 
 if (argv.help || argv.h) {
   usage()
+  process.exit(0)
 }
 
 // Map constructor turns arrays into key value pairs
