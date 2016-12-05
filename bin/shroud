@@ -4,7 +4,6 @@
 // external
 import {red} from 'chalk'
 import minimist from 'minimist'
-import inquirer from 'inquirer'
 
 // lib
 import commands from '../lib/commands/index'
@@ -31,9 +30,6 @@ if (aliases.has(command)) {
   command = aliases.get(command)
 }
 
-const requiresPassword = command === 'show'
-let password = argv.password || argv.p
-
 if (!commands.has(command)) {
   console.log(red(`Error: ${command} is not a valid command\n`))
   usage()
@@ -42,17 +38,4 @@ if (!commands.has(command)) {
 
 // get the command object
 command = commands.get(command)
-run(command)
-
-async function run (command) {
-  if (requiresPassword && !password) {
-    password = await inquirer.prompt([
-      { type: 'password',
-        name: 'password',
-        message: 'Enter your master password:'
-      }])
-    argv.password = password.password
-  }
-  command.run(argv)
-}
-
+command.run(argv)
