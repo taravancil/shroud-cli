@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "description": "An filesystem-based CLI password manager",
   "bin": {
-    "shroud": "build/bin/shroud"
+    "shroud": "./build/bin/shroud"
   },
   "scripts": {
     "build": "mkdir -p build && gulp compile",
