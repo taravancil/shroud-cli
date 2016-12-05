@@ -12,11 +12,6 @@ import usage from '../lib/usage'
 
 const argv = minimist(process.argv.slice(2))
 
-if (argv.help || argv.h) {
-  usage()
-  process.exit(0)
-}
-
 // Map constructor turns arrays into key value pairs
 const aliases = new Map([
   ['ls', 'list'],
@@ -25,6 +20,11 @@ const aliases = new Map([
 
 // default command is help
 let command = argv._[0] || 'help'
+
+if (argv.help || argv.h || command === 'help') {
+  usage()
+  process.exit()
+}
 
 // if the command is an alias, redefine it
 if (aliases.has(command)) {
