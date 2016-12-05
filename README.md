@@ -40,4 +40,8 @@ $ shroud-cli <add | show | ls | rm> [options]
 | show [name] | Decrypt and show the secret for [name] |
 | {ls, list} | List the names of all the secrets in your vault |
 | {rm, remove} [name] | Remove a secret from your vault |
-| help | Show detailed usage information | 
+| help | Show detailed usage information |
+
+### Options
+
+// TODO Add docs for using each command's options
