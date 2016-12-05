@@ -1,14 +1,31 @@
 {
   "name": "shroud-cli",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
+  "description": "An filesystem-based CLI password manager",
+  "binary": {
+    "shroud": "build/bin/shroud"
+  },
   "scripts": {
     "build": "mkdir -p build && gulp compile",
+    "prepublish": "standard && npm run build",
     "start": "gulp",
     "test": "standard"
   },
-  "author": "Tara Vancil",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taravancil/shroud-cli"
+  },
+  "author": {
+    "name": "Tara Vancil",
+    "email": "tbvanc@gmail.com"
+  },
+  "keywords": [
+    "password",
+    "password manager",
+    "secrets",
+    "secret store",
+    "encryption"
+  ],
   "license": "MIT",
   "babel": {
     "presets": [
