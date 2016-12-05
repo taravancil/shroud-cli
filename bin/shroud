@@ -21,7 +21,7 @@ const aliases = new Map([
 // default command is help
 let command = argv._[0] || 'help'
 
-if (argv.help || argv.h || command === 'help') {
+if (command === 'help') {
   usage()
   process.exit()
 }
@@ -31,7 +31,7 @@ if (aliases.has(command)) {
   command = aliases.get(command)
 }
 
-if (!commands.has(command)) {
+if (!commands.has(command) && command !== 'help') {
   console.log(red(`Error: ${command} is not a valid command`))
   usage()
   process.exit(1)
@@ -39,4 +39,10 @@ if (!commands.has(command)) {
 
 // get the command object
 command = commands.get(command)
+
+if (argv.help || argv.h) {
+  command.help()
+  process.exit(0)
+}
+
 command.run(argv)
