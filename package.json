@@ -1,8 +1,8 @@
 {
   "name": "shroud-cli",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "An filesystem-based CLI password manager",
-  "binary": {
+  "bin": {
     "shroud": "build/bin/shroud"
   },
   "scripts": {
