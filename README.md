@@ -25,7 +25,7 @@ $ npm install -g shroud-cli
 3. Initialize `shroud` with your master password:
 
 ```
-$ shroud-cli init
+$ shroud init
 Enter a strong master password: asupergreatdicewarepassphrase
 Confirm your master password: asupergreatdicewarepassphrase
 Generating your keys...
@@ -34,7 +34,7 @@ Success!
 ## Usage
 
 ```
-$ shroud-cli <add | show | ls | rm> [options]
+$ shroud <add | show | ls | rm> [options]
 ```
 
 | Command | Description |
