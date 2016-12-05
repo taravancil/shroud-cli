@@ -31,7 +31,7 @@ if (aliases.has(command)) {
   command = aliases.get(command)
 }
 
-const requiresPassword = new Set(['init', 'show']).has(command)
+const requiresPassword = command === 'show'
 let password = argv.password || argv.p
 
 if (!commands.has(command)) {
