@@ -7,7 +7,6 @@ import minimist from 'minimist'
 
 // lib
 import commands from '../lib/commands/index'
-import help from '../lib/help'
 import usage from '../lib/usage'
 
 const argv = minimist(process.argv.slice(2))
