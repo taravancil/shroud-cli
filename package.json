@@ -5,11 +5,16 @@
   "bin": {
     "shroud": "./build/bin/shroud"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
   "scripts": {
     "build": "mkdir -p build && gulp compile",
-    "prepublish": "standard && mkdir -p build && gulp compile",
+    "prepublish": "npm run test && mkdir -p build && gulp compile",
     "start": "gulp",
-    "test": "standard"
+    "test": "prettier --check lib/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +22,7 @@
   },
   "author": {
     "name": "Tara Vancil",
-    "email": "tbvanc@gmail.com"
+    "email": "contact@taravancil.com"
   },
   "keywords": [
     "password",
@@ -43,6 +48,8 @@
     "babel-register": "^6.18.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
+    "husky": "^3.1.0",
+    "prettier": "^1.19.1",
     "standard": "^8.6.0"
   },
   "dependencies": {
