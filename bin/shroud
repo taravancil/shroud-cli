@@ -1,47 +1,41 @@
 #!/usr/bin/env node
-// native
 
-// external
-import {red} from 'chalk'
-import minimist from 'minimist'
+const chalk = require("chalk");
+const minimist = require("minimist");
+const commands = require("../lib/commands/index");
+const usage = require("../lib/usage");
 
-// lib
-import commands from '../lib/commands/index'
-import usage from '../lib/usage'
+const argv = minimist(process.argv.slice(2));
 
-const argv = minimist(process.argv.slice(2))
-
-// Map constructor turns arrays into key value pairs
 const aliases = new Map([
-  ['ls', 'list'],
-  ['rm', 'remove']
-])
+  ["ls", "list"],
+  ["rm", "remove"],
+]);
 
 // default command is help
-let command = argv._[0] || 'help'
+let command = argv._[0] || "help";
 
-if (command === 'help') {
-  usage()
-  process.exit()
+if (command === "help") {
+  usage();
+  process.exit();
 }
 
 // if the command is an alias, redefine it
 if (aliases.has(command)) {
-  command = aliases.get(command)
+  command = aliases.get(command);
 }
 
-if (!commands.has(command) && command !== 'help') {
-  console.log(red(`Error: ${command} is not a valid command`))
-  usage()
-  process.exit(1)
+if (!commands.has(command) && command !== "help") {
+  console.log(red(`Error: ${command} is not a valid command`));
+  usage();
+  process.exit(1);
 }
 
-// get the command object
-command = commands.get(command)
+command = commands.get(command);
 
 if (argv.help || argv.h) {
-  command.help()
-  process.exit(0)
+  command.help();
+  process.exit(0);
 }
 
-command.run(argv)
+command.run(argv);
