@@ -28,19 +28,20 @@ Confirm your master password: asupergreatdicewarepassphrase
 Generating your keys...
 Success!
 ```
+
 ## Usage
 
 ```
 $ shroud <add | show | ls | rm> [options]
 ```
 
-| Command | Description |
-| ------- | ----------- |
-| add [name] | Encrypt and add a secret for [name] to your vault |
-| show [name] | Decrypt and show the secret for [name] |
-| {ls, list} | List the names of all the secrets in your vault |
-| {rm, remove} [name] | Remove a secret from your vault |
-| help | Show detailed usage information |
+| Command                   | Description                                       |
+| ------------------------- | ------------------------------------------------- |
+| `add [name]`              | Encrypt and add a secret for [name] to your vault |
+| `show [name]`             | Decrypt and show the secret for [name]            |
+| {`ls`, `list`}            | List the names of all the secrets in your vault   |
+| {`rm`, `remove`} `[name]` | Remove a secret from your vault                   |
+| `help`                    | Show detailed usage information                   |
 
 ### Options
 
