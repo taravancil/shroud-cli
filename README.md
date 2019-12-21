@@ -1,8 +1,5 @@
 # shroud-cli
 
-[![standard code
-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
-
 **`shroud-cli` is under active development and is not yet recommended for use.
 Use at your own risk.**
 
