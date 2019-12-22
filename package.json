@@ -41,5 +41,8 @@
     "inquirer": "^1.2.3",
     "minimist": "^1.2.0",
     "shroud": "^0.6.1"
+  },
+  "engines": {
+    "node": ">=8.x"
   }
 }
